@@ -1,5 +1,4 @@
 function januaryDays(firstWeekDay) {
-  let indexOfFirstweekDay = weekDays.indexOf(firstWeekDay);
   let month = [];
   let weekDays = [
     'Понедельник',
@@ -10,10 +9,13 @@ function januaryDays(firstWeekDay) {
     'Суббота',
     'Воскресенье',
   ];
-  for (let i = 0; i <= 31; i++) {
+  let indexOfFirstweekDay = weekDays.indexOf(firstWeekDay);
+  for (let i = 0; i < 31; i++) {
     month.push(i);
     console.log(
-      i + ' января ' + weekDays[(month[i] + indexOfFirstweekDay) % 7]
+      `${month[i] + 1}  января  ${
+        weekDays[(month[i] + indexOfFirstweekDay) % 7]
+      }`
     );
   }
 }
